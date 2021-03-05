@@ -1,16 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppComponent } from './app.component';
+import { EventAppComponent } from "./envent_app.component";
+import { EventListComponent } from "./event/event_list.component";
+import { EventThumbnail } from "./event/event_thumbnails.component";
+import { Navbar } from "./event/navbar/navbar.component";
+import { EventService } from "./event/services/event_service";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule],
+  declarations: [Navbar, EventAppComponent, EventListComponent, EventThumbnail],
+  providers: [EventService],
+  bootstrap: [EventAppComponent],
 })
-export class AppModule { }
+export class AppModule {}
