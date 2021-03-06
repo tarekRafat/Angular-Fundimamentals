@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 @Component({
   template: `
     <nav-bar></nav-bar>
-    <event-list></event-list>
+    <router-outlet></router-outlet>
   `,
   selector: "event-app",
 })
