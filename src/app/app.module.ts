@@ -13,9 +13,12 @@ import { routes } from "./event/routes/routes";
 import { NewEventComponent } from "./event/new-event/new-event.component";
 import { Error404Component } from "./event/errors/404.component";
 import { ActivateService } from "./event/services/activate.service";
+import { FormComponent } from "./event/form/Form.component";
+import { FormsModule } from "@angular/forms";
+import { AuthService } from "./event/services/auth.service";
 
 @NgModule({
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, RouterModule.forRoot(routes), FormsModule],
   declarations: [
     NewEventComponent,
     Navbar,
@@ -24,8 +27,9 @@ import { ActivateService } from "./event/services/activate.service";
     EventThumbnail,
     EventDetails,
     Error404Component,
+    FormComponent,
   ],
-  providers: [EventService, ToastrService, ActivateService],
+  providers: [EventService, ToastrService, ActivateService, AuthService],
   bootstrap: [EventAppComponent],
 })
 export class AppModule {}

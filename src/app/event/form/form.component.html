@@ -1,0 +1,72 @@
+<h1>Login</h1>
+<hr />
+<div class="col-md-4">
+  <form
+    #loginForm="ngForm"
+    (ngSubmit)="log(loginForm.value)"
+    autocomplete="off"
+    ngNativeValidate
+  >
+    <div class="form-group">
+      <div class="label_error">
+        <label for="userName">User Name:</label>
+        <em
+          *ngIf="
+            loginForm.controls.userName?.invalid &&
+            ((loginForm.controls.userName.touched &&
+              loginForm.controls.userName.dirty) ||
+              enterLogin)
+          "
+          >Required</em
+        >
+      </div>
+      <input
+        (ngModel)="(userName)"
+        name="userName"
+        required
+        id="userName"
+        type="text"
+        class="form-control"
+        placeholder="User Name..."
+      />
+      <!-- <div *ngIf="!userName.value && userName.touched" class="error-msg">
+        Error Msg should appear
+      </div> -->
+    </div>
+    <div class="form-group">
+      <div class="label_error">
+        <label for="password">Password:</label>
+        <em
+          *ngIf="
+            loginForm.controls.password?.invalid &&
+            ((loginForm.controls.password.touched &&
+              loginForm.controls.password.dirty) ||
+              enterLogin)
+          "
+          >Required</em
+        >
+      </div>
+      <input
+        (ngModel)="(password)"
+        name="password"
+        required
+        id="password"
+        type="password"
+        class="form-control"
+        placeholder="Password..."
+      />
+    </div>
+    <span (mouseenter)="enterLogin = true" (mouseleave)="enterLogin = false">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
+    </span>
+    <button type="button" class="btn btn-default" (click)="cancel()">
+      Cancel
+    </button>
+  </form>
+</div>
