@@ -10,17 +10,22 @@ import { ToastrService } from "./event/services/toastr_service";
 import { EventDetails } from "./event-details/event_details.component";
 import { RouterModule } from "@angular/router";
 import { routes } from "./event/routes/routes";
+import { NewEventComponent } from "./event/new-event/new-event.component";
+import { Error404Component } from "./event/errors/404.component";
+import { ActivateService } from "./event/services/activate.service";
 
 @NgModule({
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   declarations: [
+    NewEventComponent,
     Navbar,
     EventAppComponent,
     EventListComponent,
     EventThumbnail,
     EventDetails,
+    Error404Component,
   ],
-  providers: [EventService, ToastrService],
+  providers: [EventService, ToastrService, ActivateService],
   bootstrap: [EventAppComponent],
 })
 export class AppModule {}
