@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { isConstructorDeclaration } from "typescript";
-import { EventService } from "./services/event_service";
-import { ToastrService } from "./services/toastr_service";
+import { EventService } from "./services/event.service";
+import { ToastrService } from "./services/toastr.service";
 
 @Component({
   template: `

@@ -50,7 +50,7 @@
               *ngIf="!auth.isAuthentacted()"
               >Log in</a
             >
-            <a *ngIf="auth.isAuthentacted()"
+            <a *ngIf="auth.isAuthentacted()" [routerLink]="['./event', 'new']"
               >Welcome {{ auth.userInfo.userName }}</a
             >
           </li>
